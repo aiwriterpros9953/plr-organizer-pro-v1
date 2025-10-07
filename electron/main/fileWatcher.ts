@@ -1,4 +1,4 @@
-import { ipcMain, BrowserWindow } from 'electron';
+import { ipcMain, BrowserWindow, app } from 'electron';
 import * as chokidar from 'chokidar';
 import type { FileWatchEvent } from '../shared/types';
 
@@ -60,8 +60,9 @@ export function setupFileWatcher(mainWindow: BrowserWindow) {
         mainWindow.webContents.send('file:event', event);
       });
 
-      // Handle errors
-      watcher.on('error', (error: Error) => {
+      // Handle errors (fixed type compatibility)
+      watcher.on('error', (err: unknown) => {
+        const error = err instanceof Error ? err : new Error('Unknown error');
         const event: FileWatchEvent = {
           type: 'error',
           path: folderPath,
@@ -89,7 +90,7 @@ export function setupFileWatcher(mainWindow: BrowserWindow) {
   ipcMain.handle('folder:unwatch', async (event, folderPath: string) => {
     try {
       const watcher = watchers.get(folderPath);
-      
+
       if (!watcher) {
         return { success: false, error: 'No watcher found for this folder' };
       }
@@ -118,9 +119,4 @@ export async function closeAllWatchers() {
   }
 
   await Promise.all(closePromises);
-  watchers.clear();
-}
-
-// Export for cleanup in main process
-import { app } from 'electron';
-app.on('will-quit', closeAllWatchers);
+  watchers

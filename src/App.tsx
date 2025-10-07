@@ -37,6 +37,11 @@ import Tools from '@/pages/Tools';
 import Templates from '@/pages/Templates';
 import TemplateCategory from '@/pages/TemplateCategory';
 import TemplateDetail from '@/pages/TemplateDetail';
+import TemplatesLibrary from '@/pages/TemplatesLibrary';
+import BlogTemplates from '@/pages/templates/BlogTemplates';
+import EmailTemplates from '@/pages/templates/EmailTemplates';
+import LegalTemplates from '@/pages/templates/LegalTemplates';
+import SocialMediaTemplates from '@/pages/templates/SocialMediaTemplates';
 
 // PLR Tools
 import HtmlEditor from '@/pages/HtmlEditor';
@@ -114,7 +119,11 @@ function App() {
                 <Route path="/tools" element={<Tools />} />
 
                 {/* Templates */}
-                <Route path="/templates" element={<Templates />} />
+                <Route path="/templates" element={<TemplatesLibrary />} />
+                <Route path="/templates/blogs" element={<BlogTemplates />} />
+                <Route path="/templates/emails" element={<EmailTemplates />} />
+                <Route path="/templates/legal" element={<LegalTemplates />} />
+                <Route path="/templates/social-media" element={<SocialMediaTemplates />} />
                 <Route path="/templates/:category" element={<TemplateCategory />} />
                 <Route path="/templates/:category/:id" element={<TemplateDetail />} />
 

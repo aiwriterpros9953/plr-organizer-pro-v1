@@ -1,7 +1,10 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "plr-organizer-pro",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Professional PLR Content Organizer",
+  "author": "PLR Organizer Pro",
+  "homepage": "https://plrorganizerpro.com",
   "type": "module",
   "main": "dist-electron/main/index.js",
   "scripts": {
@@ -12,7 +15,14 @@
     "preview": "vite preview",
     "electron:dev": "concurrently \"vite --port 8082\" \"wait-on http://localhost:8082 && tsc -p electron/tsconfig.json && electron .\"",
     "electron:build": "vite build && tsc -p electron/tsconfig.json && electron-builder",
-    "electron:pack": "vite build && tsc -p electron/tsconfig.json && electron-builder --dir"
+    "electron:build:win": "vite build && tsc -p electron/tsconfig.json && electron-builder --win",
+    "electron:build:mac": "vite build && tsc -p electron/tsconfig.json && electron-builder --mac",
+    "electron:build:linux": "vite build && tsc -p electron/tsconfig.json && electron-builder --linux",
+    "electron:build:all": "vite build && tsc -p electron/tsconfig.json && electron-builder -mwl",
+    "electron:pack": "vite build && tsc -p electron/tsconfig.json && electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps && npx update-browserslist-db@latest",
+    "audit:fix": "npm audit fix",
+    "cleanup:deprecated": "echo 'Review deprecated packages manually before removing.'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -79,18 +89,6 @@
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
-    "lovable-tagger": "^1.1.7",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.11",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "@types/react-dom": "^18.3.0"
   }
 }

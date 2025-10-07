@@ -35,7 +35,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link to="/resources/plr-software-guides">
+                    <Link to="/plr-software-guides">
                       View Guides
                     </Link>
                   </Button>
@@ -73,7 +73,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link to="/resources/templates/blogs">
+                    <Link to="/templates/blogs">
                       <FileText className="mr-2 h-4 w-4" />
                       View Templates
                     </Link>
@@ -91,7 +91,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link to="/resources/templates/emails">
+                    <Link to="/templates/emails">
                       <FileText className="mr-2 h-4 w-4" />
                       View Templates
                     </Link>
@@ -109,7 +109,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link to="/resources/templates/legal">
+                    <Link to="/templates/legal">
                       <FileText className="mr-2 h-4 w-4" />
                       View Templates
                     </Link>
@@ -127,7 +127,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild>
-                    <Link to="/resources/templates/social-media">
+                    <Link to="/templates/social-media">
                       <FileText className="mr-2 h-4 w-4" />
                       View Templates
                     </Link>
@@ -145,7 +145,7 @@ export default function Resources() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild size="lg">
-                    <Link to="/resources/templates">
+                    <Link to="/templates">
                       Browse Template Library
                     </Link>
                   </Button>
@@ -177,7 +177,7 @@ export default function Resources() {
               </CardContent>
               <CardFooter>
                 <Button asChild>
-                  <Link to="/resources/plr-software-faq">
+                  <Link to="/plr-software-faq">
                     View All FAQs
                   </Link>
                 </Button>
