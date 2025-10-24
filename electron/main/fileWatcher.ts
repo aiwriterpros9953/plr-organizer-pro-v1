@@ -61,7 +61,7 @@ export function setupFileWatcher(mainWindow: BrowserWindow) {
       });
 
       // Handle errors
-      watcher.on('error', (error: Error) => {
+      watcher.on('error', (error: unknown) => {
         const event: FileWatchEvent = {
           type: 'error',
           path: folderPath,
