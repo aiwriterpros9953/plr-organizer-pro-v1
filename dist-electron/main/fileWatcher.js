@@ -131,5 +131,5 @@ async function closeAllWatchers() {
         closePromises.push(watcher.close());
     }
     await Promise.all(closePromises);
-    watchers;
+    watchers.clear();
 }

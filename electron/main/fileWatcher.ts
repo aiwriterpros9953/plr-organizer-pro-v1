@@ -119,4 +119,5 @@ export async function closeAllWatchers() {
   }
 
   await Promise.all(closePromises);
-  watchers
+  watchers.clear();
+}
